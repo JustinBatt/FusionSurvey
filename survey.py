@@ -13,7 +13,7 @@ survey_questions = {
 def save_responses(responses):
     # Initialize the GitHub repository
     g = Github("YOUR_GITHUB_ACCESS_TOKEN")
-    repo = g.get_repo("YOUR_GITHUB_USERNAME/FusionSurvey")
+    repo = g.get_repo("JustinBatt/FusionSurvey")
     # Create the XML tree
     root = ET.Element("survey_responses")
     for key, value in responses.items():
