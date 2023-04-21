@@ -10,7 +10,7 @@ survey_questions = {
 
 # Define a function to save the responses to an XML document
 def save_responses(responses):
-    root = ET.Element("FusionSurvey/survey_responses")
+    root = ET.Element("/FusionSurvey/survey_responses")
     for key, value in responses.items():
         ET.SubElement(root, key).text = value
     tree = ET.ElementTree(root)
