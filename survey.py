@@ -14,7 +14,7 @@ def save_responses(responses):
     for key, value in responses.items():
         ET.SubElement(root, key).text = value
     tree = ET.ElementTree(root)
-    tree.write("/survey_responses.xml")
+    tree.write("/Responses.xml")
 
 # Create a Streamlit app that displays the survey questions and saves responses
 def main():
