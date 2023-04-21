@@ -9,19 +9,13 @@ survey_questions = {
     "feedback": "Do you have any feedback for us?"
 }
 
-# Define a function to save the responses to an XML document in a GitHub path
+# Define a function to save the responses to an XML document
 def save_responses(responses):
-    # Initialize the GitHub repository
-    g = Github("YOUR_GITHUB_ACCESS_TOKEN")
-    repo = g.get_repo("JustinBatt/FusionSurvey")
-    # Create the XML tree
     root = ET.Element("survey_responses")
     for key, value in responses.items():
         ET.SubElement(root, key).text = value
     tree = ET.ElementTree(root)
-    # Write the XML file to the GitHub path
-    contents = ET.tostring(root, encoding="unicode", method="xml")
-    repo.create_file("survey_responses.xml", "Committing survey responses", contents)
+    tree.write("survey_responses.xml")
 
 # Create a Streamlit app that displays the survey questions and saves responses
 def main():
