@@ -1,6 +1,5 @@
 import streamlit as st
 import xml.etree.ElementTree as ET
-from github import Github
 
 # Define the survey questions as a dictionary
 survey_questions = {
@@ -15,7 +14,7 @@ def save_responses(responses):
     for key, value in responses.items():
         ET.SubElement(root, key).text = value
     tree = ET.ElementTree(root)
-    tree.write("survey_responses.xml")
+    tree.write("JustinBatt/FusionSurvey/survey_responses.xml")
 
 # Create a Streamlit app that displays the survey questions and saves responses
 def main():
