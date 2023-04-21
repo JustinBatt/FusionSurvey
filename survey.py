@@ -10,11 +10,11 @@ survey_questions = {
 
 # Define a function to save the responses to an XML document
 def save_responses(responses):
-    root = ET.Element("/FusionSurvey/survey_responses")
+    root = ET.Element("survey_responses")
     for key, value in responses.items():
         ET.SubElement(root, key).text = value
     tree = ET.ElementTree(root)
-    tree.write("survey_responses.xml")
+    tree.write("FusionSurvey/survey_responses.xml")
 
 # Create a Streamlit app that displays the survey questions and saves responses
 def main():
